@@ -9,132 +9,148 @@
         %i.fa.fa-power-off
     .main-menu
       %ul
-        %li.active
-          %a{href: "index.html"}
-            %span.menu-icon
-              %i.fa.fa-desktop.fa-lg
-            %span.text
-              Dashboard
-            %span.menu-hover
-        %li.openable
-          %a{href: "#"}
-            %span.menu-icon
-              %i.fa.fa-file-text.fa-lg
-            %span.text
-              Page
-            %span.menu-hover
-          %ul.submenu
-            %li
-              %a{href: "login.html"}
-                %span.submenu-label Sign in
-            %li
-              %a{href: "register.html"}
-                %span.submenu-label Sign up
-            %li
-              %a{href: "profile.html"}
-                %span.submenu-label Profile
-            %li
-              %a{href: "blog.html"}
-                %span.submenu-label Blog
-            %li
-              %a{href: "single_post.html"}
-                %span.submenu-label Single Post
-            %li
-              %a{href: "landing.html"}
-                %span.submenu-label Landing
-            %li
-              %a{href: "search_result.html"}
-                %span.submenu-label Search Result
-            %li
-              %a{href: "chat.html"}
-                %span.submenu-label Chat Room
-            %li
-              %a{href: "movie.html"}
-                %span.submenu-label Movie Gallery
-            %li
-              %a{href: "pricing.html"}
-                %span.submenu-label Pricing
-            %li
-              %a{href: "invoice.html"}
-                %span.submenu-label Invoice
-            %li
-              %a{href: "faq.html"}
-                %span.submenu-label FAQ
-            %li
-              %a{href: "contact.html"}
-                %span.submenu-label Contact
-            %li
-              %a{href: "error404.html"}
-                %span.submenu-label Error404
-            %li
-              %a{href: "error500.html"}
-                %span.submenu-label Error500
-            %li
-              %a{href: "blank.html"}
-                %span.submenu-label Blank
-        %li.openable
-          %a{href: "#"}
-            %span.menu-icon
-              %i.fa.fa-tag.fa-lg
-            %span.text
-              Component
-            %span.badge.badge-success.bounceIn.animation-delay5 9
-            %span.menu-hover
-          %ul.submenu
-            %li
-              %a{href: "ui_element.html"}
-                %span.submenu-label UI Features
-            %li
-              %a{href: "button.html"}
-                %span.submenu-label Button & Icons
-            %li
-              %a{href: "tab.html"}
-                %span.submenu-label Tab
-            %li
-              %a{href: "nestable_list.html"}
-                %span.submenu-label Nestable List
-            %li
-              %a{href: "calendar.html"}
-                %span.submenu-label Calendar
-            %li
-              %a{href: "table.html"}
-                %span.submenu-label Table
-            %li
-              %a{href: "widget.html"}
-                %span.submenu-label Widget
-            %li
-              %a{href: "form_element.html"}
-                %span.submenu-label Form Element
-            %li
-              %a{href: "form_wizard.html"}
-                %span.submenu-label Form Wizard
-        %li
-          %a{href: "timeline.html"}
-            %span.menu-icon
-              %i.fa.fa-clock-o.fa-lg
-            %span.text
-              Timeline
-            %span.menu-hover
-        %li
-          %a{href: "gallery.html"}
-            %span.menu-icon
-              %i.fa.fa-picture-o.fa-lg
-            %span.text
-              Gallery
-            %span.menu-hover
-        %li
-          %a{href: "inbox.html"}
-            %span.menu-icon
-              %i.fa.fa-envelope.fa-lg
-            %span.text
-              Inbox
-            %span.badge.badge-danger.bounceIn.animation-delay6 4
-            %span.menu-hover
-        %li
-          %a{href: "email_selection.html"}
-            %span.menu-icon
-              %i.fa.fa-tasks.fa-lg
-            %span.text
-              Email Template
-            %small.badge.badge-warning.bounceIn.animation-delay7 New
-            %span.menu-hover
+        - @weeks.each do |week|
+          %li.openable
+            %a{href: "#"}
+              %span.menu-icon
+                %i.fa-fa-calendar.fa-lg
+              %span.text
+                =week
+              %span.menu-hover
+            %ul.submenu
+              - @days.each do |day|
+                %li
+                  =link_to root_path do 
+                    %span.submenu-label
+                      =day
+                    
+      -# %ul
+      -#   %li.active
+      -#     %a{href: "index.html"}
+      -#       %span.menu-icon
+      -#         %i.fa.fa-desktop.fa-lg
+      -#       %span.text
+      -#         Dashboard
+      -#       %span.menu-hover
+      -#   %li.openable
+      -#     %a{href: "#"}
+      -#       %span.menu-icon
+      -#         %i.fa.fa-file-text.fa-lg
+      -#       %span.text
+      -#         Page
+      -#       %span.menu-hover
+      -#     %ul.submenu
+      -#       %li
+      -#         %a{href: "login.html"}
+      -#           %span.submenu-label Sign in
+      -#       %li
+      -#         %a{href: "register.html"}
+      -#           %span.submenu-label Sign up
+      -#       %li
+      -#         %a{href: "profile.html"}
+      -#           %span.submenu-label Profile
+      -#       %li
+      -#         %a{href: "blog.html"}
+      -#           %span.submenu-label Blog
+      -#       %li
+      -#         %a{href: "single_post.html"}
+      -#           %span.submenu-label Single Post
+      -#       %li
+      -#         %a{href: "landing.html"}
+      -#           %span.submenu-label Landing
+      -#       %li
+      -#         %a{href: "search_result.html"}
+      -#           %span.submenu-label Search Result
+      -#       %li
+      -#         %a{href: "chat.html"}
+      -#           %span.submenu-label Chat Room
+      -#       %li
+      -#         %a{href: "movie.html"}
+      -#           %span.submenu-label Movie Gallery
+      -#       %li
+      -#         %a{href: "pricing.html"}
+      -#           %span.submenu-label Pricing
+      -#       %li
+      -#         %a{href: "invoice.html"}
+      -#           %span.submenu-label Invoice
+      -#       %li
+      -#         %a{href: "faq.html"}
+      -#           %span.submenu-label FAQ
+      -#       %li
+      -#         %a{href: "contact.html"}
+      -#           %span.submenu-label Contact
+      -#       %li
+      -#         %a{href: "error404.html"}
+      -#           %span.submenu-label Error404
+      -#       %li
+      -#         %a{href: "error500.html"}
+      -#           %span.submenu-label Error500
+      -#       %li
+      -#         %a{href: "blank.html"}
+      -#           %span.submenu-label Blank
+      -#   %li.openable
+      -#     %a{href: "#"}
+      -#       %span.menu-icon
+      -#         %i.fa.fa-tag.fa-lg
+      -#       %span.text
+      -#         Component
+      -#       %span.badge.badge-success.bounceIn.animation-delay5 9
+      -#       %span.menu-hover
+      -#     %ul.submenu
+      -#       %li
+      -#         %a{href: "ui_element.html"}
+      -#           %span.submenu-label UI Features
+      -#       %li
+      -#         %a{href: "button.html"}
+      -#           %span.submenu-label Button & Icons
+      -#       %li
+      -#         %a{href: "tab.html"}
+      -#           %span.submenu-label Tab
+      -#       %li
+      -#         %a{href: "nestable_list.html"}
+      -#           %span.submenu-label Nestable List
+      -#       %li
+      -#         %a{href: "calendar.html"}
+      -#           %span.submenu-label Calendar
+      -#       %li
+      -#         %a{href: "table.html"}
+      -#           %span.submenu-label Table
+      -#       %li
+      -#         %a{href: "widget.html"}
+      -#           %span.submenu-label Widget
+      -#       %li
+      -#         %a{href: "form_element.html"}
+      -#           %span.submenu-label Form Element
+      -#       %li
+      -#         %a{href: "form_wizard.html"}
+      -#           %span.submenu-label Form Wizard
+      -#   %li
+      -#     %a{href: "timeline.html"}
+      -#       %span.menu-icon
+      -#         %i.fa.fa-clock-o.fa-lg
+      -#       %span.text
+      -#         Timeline
+      -#       %span.menu-hover
+      -#   %li
+      -#     %a{href: "gallery.html"}
+      -#       %span.menu-icon
+      -#         %i.fa.fa-picture-o.fa-lg
+      -#       %span.text
+      -#         Gallery
+      -#       %span.menu-hover
+      -#   %li
+      -#     %a{href: "inbox.html"}
+      -#       %span.menu-icon
+      -#         %i.fa.fa-envelope.fa-lg
+      -#       %span.text
+      -#         Inbox
+      -#       %span.badge.badge-danger.bounceIn.animation-delay6 4
+      -#       %span.menu-hover
+      -#   %li
+      -#     %a{href: "email_selection.html"}
+      -#       %span.menu-icon
+      -#         %i.fa.fa-tasks.fa-lg
+      -#       %span.text
+      -#         Email Template
+      -#       %small.badge.badge-warning.bounceIn.animation-delay7 New
+      -#       %span.menu-hover
