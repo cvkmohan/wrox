@@ -1,4 +1,6 @@
 Wrox::Application.routes.draw do
+  get 'lesson/index'
+
   get 'dashboard/index'
 
   root :to => "home#index"
