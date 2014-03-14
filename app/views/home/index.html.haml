@@ -7,11 +7,14 @@
       .row
         .col-md-8
           %h2 Course Syllabus
-          -# - for @course.each do |week|
-          -#   %h3
-          -#     = week
-          -#   - for week.each do |day|
-          -#     = day
+          -i=0
+          - @chapters.each do |chapter|
+            %h4
+              = chapter
+            - @topics1.each do |topic|
+              %span.lead
+                =topic
+              %br                
         .col-md-4
           %h2 About Course
           So you’ve heard Big Data is kind of a big deal, and you’re not sure how to transform yourself into an effective Big Data Analyst. This course is designed to teach participants what they need to know to take control of the data and draw meaningful insights out of it.
