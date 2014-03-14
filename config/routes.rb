@@ -2,8 +2,8 @@ Wrox::Application.routes.draw do
   get 'lesson/index'
 
   get 'dashboard/index'
+  get 'dashboard/landing'
 
-  get '/landing' => 'dashboard#landing'
   get '/inter1' => 'dashboard#inter1'
   get '/inter2' => 'dashboard#inter2'
   get '/inter3' => 'dashboard#inter3'

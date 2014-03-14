@@ -6,21 +6,8 @@
   .main-header.clearfix
     .page-title
       %h3.no-margin Dashboard
-      %span Welcome back Mr.Srinivasa Varma
+      %span Welcome back, John!
     / /page-title
-    %ul.page-stats
-      %li
-        .value
-          %span New visits
-          %h4#currentVisitor 4256
-        %span#visits.sparkline
-      %li
-        .value
-          %span My balance
-          %h4
-            $
-            %strong#currentBalance 32153
-        %span#balances.sparkline
     / /page-stats
   / /main-header
   .padding-md
@@ -28,187 +15,96 @@
       .col-lg-8
         .panel.panel-default
           .panel-heading
-            Work Progress
+            Course Progress
             %span.badge.badge-info.pull-right
               4 left
           %table.table.table-striped
             %thead
               %tr
-                %th Task
+                %th Module
                 %th Progress
                 %th
-                %th Time
+                %th Time Spent
             %tbody
               %tr
-                %td Bug Fixes
+                %td Introduction to Big Data
                 %td
                   .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
                     .progress-bar{style: "width: 45%"}
                       %span.sr-only 45% Complete
                 %td 45%
                 %td
-                  %span.badge.badge-info 2hr
+                  %span.badge.badge-info 20 hrs
               %tr
-                %td Mobile Development
+                %td Understanding Analytics
                 %td
                   .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
                     .progress-bar.progress-bar-success{style: "width: 61%"}
                       %span.sr-only 61% Complete
                 %td 61%
                 %td
-                  %span.badge.badge-info 1hr
+                  %span.badge.badge-info 15 hrs
               %tr
-                %td Unit Testing
+                %td Functions and Packages
                 %td
                   .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
                     .progress-bar.progress-bar-danger{style: "width: 97%"}
                       %span.sr-only 97% Complete
                 %td 97%
                 %td
-                  %span.badge.badge-info 5m
+                  %span.badge.badge-info 5hrs
               %tr
-                %td New frontend layout
+                %td Regression
                 %td
                   .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
                     .progress-bar.progress-bar-warning{style: "width: 18%"}
                       %span.sr-only 18% Complete
                 %td 18%
                 %td
-                  %span.badge.badge-info 12hr
+                  %span.badge.badge-info 2hrs
+              %tr
+                %td Decision Trees
+                %td
+                  .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
+                    .progress-bar.progress-bar-warning{style: "width: 18%"}
+                      %span.sr-only 18% Complete
+                %td 18%
+                %td
+                  %span.badge.badge-info 12hrs
+              %tr
+                %td Introduction to Hadoop
+                %td
+                  .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
+                    .progress-bar.progress-bar-warning{style: "width: 28%"}
+                      %span.sr-only 18% Complete
+                %td 18%
+                %td
+                  %span.badge.badge-info 12hrs
+              %tr
+                %td Integrating R with Hadoop
+                %td
+                  .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
+                    .progress-bar.progress-bar-warning{style: "width: 17%"}
+                      %span.sr-only 18% Complete
+                %td 18%
+                %td
+                  %span.badge.badge-info 1hrs
+                  
+              %tr
+                %td R versus Excel
+                %td
+                  .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
+                    .progress-bar.progress-bar-warning{style: "width: 8%"}
+                      %span.sr-only 18% Complete
+                %td 18%
+                %td
+                  %span.badge.badge-info 6hrs        
         / /panel
-        .row
-          .col-lg-6
-            .panel.panel-default
-              .panel-heading
-                To Do List
-                %span.text-success.m-left-xs
-                  %i.fa.fa-check
-                %ul.tool-bar
-                  %li
-                    %a.refresh-widget{"data-original-title" => "Refresh", "data-placement" => "bottom", "data-toggle" => "tooltip", href: "#", title: ""}
-                      %i.fa.fa-refresh
-                  %li
-                    %a{"data-toggle" => "collapse", href: "#toDoListWidget"}
-                      %i.fa.fa-arrows-v
-              #toDoListWidget.panel-body.no-padding.collapse.in
-                %ul.list-group.task-list.no-margin.collapse.in
-                  %li.list-group-item.selected
-                    %label.label-checkbox.inline
-                      %input.task-finish{checked: "checked", type: "checkbox"}/
-                      %span.custom-checkbox
-                    SEO Optimisation
-                    %span.pull-right
-                      %a.task-del{href: "#"}
-                        %i.fa.fa-trash-o.fa-lg.text-danger
-                  %li.list-group-item
-                    %label.label-checkbox.inline
-                      %input.task-finish{type: "checkbox"}/
-                      %span.custom-checkbox
-                    Unit Testing
-                    %span.pull-right
-                      %a.task-del{href: "#"}
-                        %i.fa.fa-trash-o.fa-lg.text-danger
-                  %li.list-group-item
-                    %label.label-checkbox.inline
-                      %input.task-finish{type: "checkbox"}/
-                      %span.custom-checkbox
-                    Mobile Development
-                    %span.pull-right
-                      %a.task-del{href: "#"}
-                        %i.fa.fa-trash-o.fa-lg.text-danger
-                    %span.badge.badge-success.m-right-xs 3
-                  %li.list-group-item
-                    %label.label-checkbox.inline
-                      %input.task-finish{type: "checkbox"}/
-                      %span.custom-checkbox
-                    Database Migration
-                    %span.pull-right
-                      %a.task-del{href: "#"}
-                        %i.fa.fa-trash-o.fa-lg.text-danger
-                  %li.list-group-item
-                    %label.label-checkbox.inline
-                      %input.task-finish{type: "checkbox"}/
-                      %span.custom-checkbox
-                    New Frontend Layout
-                    %span.label.label-warning.m-left-xs PENDING
-                    %span.pull-right
-                      %a.task-del{href: "#"}
-                        %i.fa.fa-trash-o.fa-lg.text-danger
-                  %li.list-group-item
-                    %label.label-checkbox.inline
-                      %input.task-finish{type: "checkbox"}/
-                      %span.custom-checkbox
-                    Bug Fixes
-                    %span.label.label-danger.m-left-xs IMPORTANT
-                    %span.pull-right
-                      %a.task-del{href: "#"}
-                        %i.fa.fa-trash-o.fa-lg.text-danger
-                / /list-group
-              .loading-overlay
-                %i.loading-icon.fa.fa-refresh.fa-spin.fa-lg
-            / /panel
-          / /.col
-          .col-lg-6
-            .panel.panel-default
-              .panel-heading
-                Feeds
-                %ul.tool-bar
-                  %li
-                    %a.refresh-widget{"data-original-title" => "Refresh", "data-placement" => "bottom", "data-toggle" => "tooltip", href: "#", title: ""}
-                      %i.fa.fa-refresh
-                  %li
-                    %a{"data-toggle" => "collapse", href: "#feedList"}
-                      %i.fa.fa-arrows-v
-              %ul#feedList.list-group.collapse.in
-                %li.list-group-item.clearfix
-                  .activity-icon.small
-                    %i.fa.fa-camera
-                  .pull-left.m-left-sm
-                    %span John Doe Add a new photo.
-                    %br/
-                    %small.text-muted
-                      %i.fa.fa-clock-o
-                      2m ago
-                %li.list-group-item.clearfix
-                  .activity-icon.bg-success.small
-                    %i.fa.fa-usd
-                  .pull-left.m-left-sm
-                    %span 2 items sold.
-                    %br/
-                    %small.text-muted
-                      %i.fa.fa-clock-o
-                      30m ago
-                %li.list-group-item.clearfix
-                  .activity-icon.bg-info.small
-                    %i.fa.fa-comment
-                  .pull-left.m-left-sm
-                    %span
-                      John Doe commented on
-                      %a{href: "#"} This Article
-                    %br/
-                    %small.text-muted
-                      %i.fa.fa-clock-o
-                      1hr ago
-                %li.list-group-item.clearfix
-                  .activity-icon.bg-success.small
-                    %i.fa.fa-usd
-                  .pull-left.m-left-sm
-                    %span 3 items sold.
-                    %br/
-                    %small.text-muted
-                      %i.fa.fa-clock-o
-                      2days ago
-              / /list-group
-              .loading-overlay
-                %i.loading-icon.fa.fa-refresh.fa-spin.fa-lg
-            / /panel
-          / /.col
-        / ./row
-      / /.col
+        
       .col-lg-4
         .panel.bg-danger
           .panel-body
-            %h4 Database Migration
+            %h4 Ready for Certification
             .progress.progress-striped.active{style: "height:8px; margin:5px 0 0 0;"}
               .progress-bar.progress-bar-danger{style: "width: 65%"}
                 %span.sr-only 65% Complete
@@ -216,98 +112,80 @@
             %strong.pull-right.m-top-xs 1hr left
         / /panel
         .panel.panel-default
-          .panel-body
-            #donutChart{style: "height: 250px;"}
-            #accordion.panel-group
-              .panel.panel-default
-                .panel-heading
-                  %h4.panel-title
-                    %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseOne"}
-                      IN-STORE Sales
-                      %span.badge.badge-success.pull-right 75%
-                #collapseOne.panel-collapse.collapse
-                  .panel-body
-                    Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-              / panel
-              .panel.panel-default
-                .panel-heading
-                  %h4.panel-title
-                    %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseTwo"}
-                      DOWMLOAD Sales
-                #collapseTwo.panel-collapse.collapse
-                  .panel-body
-                    Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-              / panel
-              .panel.panel-default
-                .panel-heading
-                  %h4.panel-title
-                    %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseThree"}
-                      MAIL-ORDER Sales
-                      %span.badge.badge-danger.pull-right
-                        %i.fa.fa-arrow-down
-                        3%
-                #collapseThree.panel-collapse.collapse
-                  .panel-body
-                    Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-              / panel
-            / panel-group
+          .panel-heading
+            Feeds
+            %ul.tool-bar
+              %li
+                %a.refresh-widget{"data-original-title" => "Refresh", "data-placement" => "bottom", "data-toggle" => "tooltip", href: "#", title: ""}
+                  %i.fa.fa-refresh
+              %li
+                %a{"data-toggle" => "collapse", href: "#feedList"}
+                  %i.fa.fa-arrows-v
+          %ul#feedList.list-group.collapse.in
+            %li.list-group-item.clearfix
+              .activity-icon.small
+                %i.fa.fa-camera
+              .pull-left.m-left-sm
+                %span Added a new photo.
+                %br/
+                %small.text-muted
+                  %i.fa.fa-clock-o
+                  2m ago
+            %li.list-group-item.clearfix
+              .activity-icon.bg-success.small
+                %i.fa.fa-question
+              .pull-left.m-left-sm
+                %span Answered a question.
+                %br/
+                %small.text-muted
+                  %i.fa.fa-clock-o
+                  30m ago
+            %li.list-group-item.clearfix
+              .activity-icon.bg-info.small
+                %i.fa.fa-comment
+              .pull-left.m-left-sm
+                %span
+                  Commented on
+                  %a{href: "#"} This Video.
+                %br/
+                %small.text-muted
+                  %i.fa.fa-clock-o
+                  1hr ago
+            %li.list-group-item.clearfix
+              .activity-icon.bg-success.small
+                %i.fa.fa-play
+              .pull-left.m-left-sm
+                %span 3 videos watched.
+                %br/
+                %small.text-muted
+                  %i.fa.fa-clock-o
+                  2days ago
+            %li.list-group-item.clearfix
+              .activity-icon.bg-success.small
+                %i.fa.fa-play
+              .pull-left.m-left-sm
+                %span 5 videos watched.
+                %br/
+                %small.text-muted
+                  %i.fa.fa-clock-o
+                  2days ago
+          / /list-group
+          .loading-overlay
+            %i.loading-icon.fa.fa-refresh.fa-spin.fa-lg
+
+
+
+
+
+
+
         / /panel
+
+      / .col-lg-5
+      /   %a.btn.btn-success.block Block Button  
       / /.col
     / /.row
+      
 
-    .row
-      .col-sm-6.col-md-3
-        .panel-stat3.bg-danger
-          %h2#userCount.m-top-none 362
-          %h5 Registered users
-          %i.fa.fa-arrow-circle-o-up.fa-lg
-          %span.m-left-xs 5% Higher than last week
-          .stat-icon
-            %i.fa.fa-user.fa-3x
-          .refresh-button
-            %i.fa.fa-refresh
-          .loading-overlay
-            %i.loading-icon.fa.fa-refresh.fa-spin.fa-lg
-      / /.col
-      .col-sm-6.col-md-3
-        .panel-stat3.bg-primary
-          %h2.m-top-none
-            %span#serverloadCount> 15
-            \%
-          %h5 Server Load
-          %i.fa.fa-arrow-circle-o-up.fa-lg
-          %span.m-left-xs 1% Higher than last week
-          .stat-icon
-            %i.fa.fa-hdd-o.fa-3x
-          .refresh-button
-            %i.fa.fa-refresh
-          .loading-overlay
-            %i.loading-icon.fa.fa-refresh.fa-spin.fa-lg
-      / /.col
-      .col-sm-6.col-md-3
-        .panel-stat3.bg-warning
-          %h2#orderCount.m-top-none 593
-          %h5 New Orders
-          %i.fa.fa-arrow-circle-o-up.fa-lg
-          %span.m-left-xs 3% Higher than last week
-          .stat-icon
-            %i.fa.fa-shopping-cart.fa-3x
-          .refresh-button
-            %i.fa.fa-refresh
-          .loading-overlay
-            %i.loading-icon.fa.fa-refresh.fa-spin.fa-lg
-      / /.col
-      .col-sm-6.col-md-3
-        .panel-stat3.bg-success
-          %h2#visitorCount.m-top-none 7214
-          %h5 Total Visitors
-          %i.fa.fa-arrow-circle-o-up.fa-lg
-          %span.m-left-xs 15% Higher than last week
-          .stat-icon
-            %i.fa.fa-bar-chart-o.fa-3x
-          .refresh-button
-            %i.fa.fa-refresh
-          .loading-overlay
-            %i.loading-icon.fa.fa-refresh.fa-spin.fa-lg
-      / /.col
+   
   / /.padding-md

@@ -1,6 +1,8 @@
 class DashboardController < ApplicationController
   def index
   end
+  def landing
+  end
   def inter1
   	render 'inter1', layout: false
   end

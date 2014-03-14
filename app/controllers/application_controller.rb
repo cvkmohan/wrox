@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   before_filter :weeks,:days,:chapters,:topics
   def weeks
-    @weeks=["Module 1","Module 2","Module 3","Module 4", "Module 5","Module 6"]
+    @weeks=["Module 1","Module 2","Module 3","Module 4", "Module 5","Module 6", "Module 7","Module 8"]
   end
   def days
     @days=[
@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
     redirect_to (request.referrer || root_path)
   end
   def after_sign_in_path_for(resource)
-     dashboard_index_path
+     dashboard_landing_path
   end
 end
 
