@@ -4,101 +4,16 @@
   =render 'layouts/breadcrumb'
   .padding-md
     .row
-      .col-sm-6
-        %iframe#player_1{frameborder: "0", height: "500", src: "http://player.vimeo.com/video/89080867?api=1&player_id=player_1&html5=1", width: "850"}
-
-
-#interOne.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interOneLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        
-      .modal-body
-        %img{src: "/images/Graph2.svg"}
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-
-#interTwo.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interTwoLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interTwoLabel.modal-title Bar chart vs Histogram
-      .modal-body
-        %blockquote
-          %p A common mistake among beginners is to confuse histograms and bar charts. Histograms have the response variable on the x axis, and the y axis shows the frequency of different values of the response. In contrast, a bar chart has the response variable on the y axis and a categorical explanatory variable on the x axis.
-
-
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-
-#interThree.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interThreeLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interThreeLabel.modal-title Which of the following is the correct syntax for implementing the plot function in R?
-      .modal-body
-        %label.label-radio
-          %input{name: "stack-radio", value: "1_1", id:"optionsRadios1", type: "radio"}/
-          %span.custom-radio
-          PLOT ()
-
-        %label.label-checkbox
-          %input{name: "stack-radio", value: "1_2", id:"optionsRadios1", type: "radio"}/
-          %span.custom-radio
-          plot (x, y)
-
-        %label.label-radio
-          %input{name: "stack-radio", value: "1_3", id:"optionsRadios1", type: "radio"}/
-          %span.custom-radio
-          plot (x,y)
-
-        %label.label-checkbox
-          %input{name: "stack-radio", value: "1_4", id:"optionsRadios1", type: "radio"}/
-          %span.custom-radio
-          Plot (x, y)
-        %br
-        #result  
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Submit Answer
-
-#interFour.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interFourLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interFourLabel.modal-title Intervention Four
-      .modal-body
-        %iframe{allowfullscreen: "allowfullscreen", frameborder: "0", height: "300", width: "100%"}
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Save changes
-
-#interFive.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interFiveLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interFiveLabel.modal-title Intervention Five
-      .modal-body
-        \...
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Save changes
-
-#interSix.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interSixLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interSixLabel.modal-title Intervention Six
-      .modal-body
-        \...
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Save changes        
+      .col-sm-7
+        .panel.panel-default.fadeInDown.animation-delay3
+          .panel-heading
+            %i.fa.fa-play-circle
+            Video on Graphical Analysis in R
+          .panel-body
+            %iframe#player_1{frameborder: "0", height: "450", src: "http://player.vimeo.com/video/89080867?api=1&player_id=player_1&html5=1", width: "610"}       
+      .col-sm-5#intervention
+      .col-sm-5#transcript
+        = render 'transcript'
       
 = javascript_include_tag 'api/froogaloop.min'
 = javascript_include_tag 'player'
@@ -112,7 +27,10 @@
   }
 
 :javascript
-  
+  $("documaent").ready(function(){
+    $("#flash-object").hide();
+  });
+
   function validate_one(){
     answer = $('input[type="radio"]:checked').val();
     if( typeof answer == "undefined" ){$("#optionsRadios1").focus(); return false;}

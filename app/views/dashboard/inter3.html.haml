@@ -1,0 +1,35 @@
+
+.panel.panel-default.fadeInDown.animation-delay3
+  .panel-heading
+    %i.fa.fa-question-circle
+    Quiz
+  .panel-body
+    %h4#interThreeLabel.modal-title 
+      Which of the following is the correct syntax for implementing the plot function in R?
+    .modal-body
+      %label.label-radio
+        %input{name: "stack-radio", value: "1_1", id:"optionsRadios1", type: "radio"}/
+        %span.custom-radio
+        PLOT ()
+
+      %label.label-checkbox
+        %input{name: "stack-radio", value: "1_2", id:"optionsRadios1", type: "radio"}/
+        %span.custom-radio
+        plot (x, y)
+
+      %label.label-radio
+        %input{name: "stack-radio", value: "1_3", id:"optionsRadios1", type: "radio"}/
+        %span.custom-radio
+        plot (x,y)
+
+      %label.label-checkbox
+        %input{name: "stack-radio", value: "1_4", id:"optionsRadios1", type: "radio"}/
+        %span.custom-radio
+        Plot (x, y)
+      %br
+      %button.btn.btn-primary{type: "button"} Submit Answer
+
+      #result  
+
+
+

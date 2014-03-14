@@ -66,56 +66,44 @@
           console.log(data.seconds);
           if(data.seconds > 52.3 && data.seconds < 52.7){
             //apiLog('playProgress event : ' + data.seconds + ' : ' + data.percent + ' : ' + data.duration);
+            $("#intervention").show();
+            $("#transcript").hide();
             $(".inter_one").addClass('player_active'); 
-            $('#interOne').modal(
-              {backdrop: 'static', keyboard: false}
-            );
+            $( "#intervention" ).load( "/inter1" );
+
             froogaloop.api('pause');
-            $('#interOne').on('hidden.bs.modal', function (e) {
-              // do something...
-              froogaloop.api('play');
-              $(".inter_one").attr("href", "#interOne");
-              $(".inter_one").attr("data-toggle", "modal");
-            });
+            
           }else if(data.seconds > 87.6 && data.seconds < 88){
+            $("#intervention").show();
+            $("#transcript").hide();
             $(".inter_two").addClass('player_active'); 
-            $('#interTwo').modal(
-              {backdrop: 'static', keyboard: false}
-            );
+
+            $( "#intervention" ).load( "/inter2" );
             froogaloop.api('pause');
-            $('#interTwo').on('hidden.bs.modal', function (e) {
-              // do something...
-              froogaloop.api('play');
-              $(".inter_two").attr("href", "#interTwo");
-              $(".inter_two").attr("data-toggle", "modal");
-            });
+           
           }else if(data.seconds > 138.2 && data.seconds < 138.5){
+            $("#intervention").show();
+            $("#transcript").hide();
+
             $(".inter_three").addClass('player_active'); 
-            $('#interThree').modal(
-              {backdrop: 'static', keyboard: false}
-            );
+
+            $( "#intervention" ).load( "/inter3");
             froogaloop.api('pause');
-            $('#interThree').on('hidden.bs.modal', function (e) {
-              // do something...
-              froogaloop.api('play');
-              $(".inter_three").attr("href", "#interThree");
-              $(".inter_three").attr("data-toggle", "modal");
-            });
+            
           }else if(data.seconds > 167.5 && data.seconds < 168){
+            $("#intervention").show();
+            $("#transcript").hide();
 
             $('iframe').attr('src', "http://www.r-fiddle.org/#/embed?id=I5ErtPdo");
 
             $(".inter_four").addClass('player_active'); 
-            $('#interFour').modal(
-              {backdrop: 'static', keyboard: false}
-            );
+
+            $( "#intervention" ).load( "/inter4");
+
             froogaloop.api('pause');
-            $('#interFour').on('hidden.bs.modal', function (e) {
-              // do something...
-              froogaloop.api('play');
-              $(".inter_four").attr("href", "#interFour");
-              $(".inter_four").attr("data-toggle", "modal");
-            });
+          }else{
+            $("#intervention").hide();
+            $("#transcript").show();
           }    
 
 

@@ -2,10 +2,16 @@ class ApplicationController < ActionController::Base
   include Pundit
   before_filter :weeks,:days
   def weeks
-    @weeks=["Week 1","Week 2","Week 3","Week 4", "Week 5","Week 6"]
+    @weeks=["Module 1","Module 2","Module 3","Module 4", "Module 5","Module 6"]
   end
   def days
-    @days=["Session 1","Session 2","Session 3","Session 4", "Session 5"]
+    @days=[
+      "Using Functions and Packages in R",
+      "Descriptive Statistics in R",
+      "Analyzing Big Data by Using Functions, Loops, and Data Frames",
+      "Graphical Analysis in R", 
+      "Hypothesis Testing in R"
+    ]
   end  
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
