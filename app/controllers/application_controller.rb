@@ -2,13 +2,14 @@ class ApplicationController < ActionController::Base
   include Pundit
   before_filter :weeks,:days,:chapters,:topics
   def weeks
-    @weeks=["Week 1","Week 2","Week 3","Week 4", "Week 5","Week 6"]
+    @weeks=["Module 1","Module 2","Module 3","Module 4", "Module 5","Module 6"]
   end
   def days
-    @days=["Session 1","Session 2","Session 3","Session 4", "Session 5"]
+    @days=["Introduction to Big Data","Business Applications of Big Data",
+        "Technologies for Handling Big Data","Understanding the Hadoop Ecosystem","MapReduce Fundamentals"]
   end  
   def chapters
-    @chapters=["Week 1","Week 2","Week 3","Week 4", "Week 5","Week 6"]
+    @chapters=["Module 1","Module 2","Module 3","Module 4", "Module 5","Module 6"]
   end
   def topics
     @topics1=["Introduction to Big Data","Business Applications of Big Data",
