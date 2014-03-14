@@ -14,4 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require theme/jquery.colorbox.min.js
+//= require theme/jquery.popupoverlay.min.js
+//= require theme/jquery.slimscroll.min.js
+//= require theme/jquery.cookie.min.js
+//= require theme/rapheal.min.js
+//= require theme/morris.min.js
+//= require theme/pace.min.js
+//= require theme/modernizr.min.js
+//= require theme/endless_dashboard.js
+//= require theme/endless.js
+
 //= require_tree .

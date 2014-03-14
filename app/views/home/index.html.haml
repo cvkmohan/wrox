@@ -1,5 +1,29 @@
-%h3 Home
-- if !current_user.nil? and current_user.admin?
-  - @users.each do |user|
-    %p
-      User: #{link_to user.email, user} Role: #{user.role unless user.role.nil?}
+=render 'layouts/navigation'
+#main
+  .row
+    .col-md-1
+      &nbsp;
+    .col-md-10  
+      .row
+        .col-md-8
+          %h2 Course Syllabus
+          -# - for @course.each do |week|
+          -#   %h3
+          -#     = week
+          -#   - for week.each do |day|
+          -#     = day
+        .col-md-4
+          %h2 About Course
+          So you’ve heard Big Data is kind of a big deal, and you’re not sure how to transform yourself into an effective Big Data Analyst. This course is designed to teach participants what they need to know to take control of the data and draw meaningful insights out of it.
+          %h2 Audience
+          Managers, consultants, marketers and analysts who have a flair for drawing inferences from data and are looking for a jump in their careers using the wrox certification.
+          %h2 Course Outcome
+          After completing this class, you’ll have implemented the analytics life-cycle in a complete project. with a first-class mobile experience. You’ll understand how to use Big Data analytics and Visualization tools, and be able to apply your knowledge to your own projects in the future.
+          %h2 Pedagogy
+          The learning experience would be video driven with interlaced interventions that draw student’s attention to contextual tidbits of information and assessments
+          %h2 Prerequisites
+          Awareness on Basics of statistics, Graphs, histograms and scatter plots, Databases, tables and fields
+          %h2 Suggested Readings
+          Customer and Business Analytics: Applied Data Mining for Business Decision Making Using R
+          %br
+          Big Data Analytics with R and Hadoop

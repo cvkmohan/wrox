@@ -1,0 +1,24 @@
+=render 'layouts/navigation'
+=render 'layouts/sidebar'
+#main-container
+  =render 'layouts/breadcrumb'
+  .padding-md
+    .row
+      .col-sm-6
+        %iframe#player_1{frameborder: "0", height: "450", src: "http://player.vimeo.com/video/88744672?api=1&player_id=player_1&html5=1", width: "670"}
+
+
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Modal title
+      .modal-body
+        \...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+      
+= javascript_include_tag 'api/froogaloop.min'
+= javascript_include_tag 'player'

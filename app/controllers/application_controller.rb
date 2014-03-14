@@ -12,5 +12,7 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "Access denied."
     redirect_to (request.referrer || root_path)
   end
-
+  def after_sign_in_path_for(resource)
+     dashboard_index_path
+  end
 end

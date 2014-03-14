@@ -65,6 +65,8 @@ GEM
     eventmachine (1.0.3)
     execjs (2.0.2)
     ffi (1.9.3)
+    font-awesome-sass (4.0.3.1)
+      sass (~> 3.2)
     formatador (0.2.4)
     guard (2.5.1)
       formatador (>= 0.2.4)
@@ -216,6 +218,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   devise
+  font-awesome-sass
   guard-bundler
   guard-rails
   haml-rails

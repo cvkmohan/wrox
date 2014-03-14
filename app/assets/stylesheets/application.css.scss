@@ -9,5 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
+ *= require theme/pace
+ *= require theme/morris
+ *= require theme/endless
+ *= require theme/endless-skin
  *= require_tree .
  */

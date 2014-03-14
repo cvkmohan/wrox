@@ -1,13 +1,166 @@
--# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+#top-nav.fixed.skin-6
+  =link_to image_tag("logo.png"), root_path, :class=>"brand"
+  %button#sidebarToggle.navbar-toggle.pull-left{type: "button"}
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+  - if user_signed_in?
+    %ul.nav-notification.clearfix
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          %i.fa.fa-envelope.fa-lg
+          %span.notification-label.bounceIn.animation-delay4 7
+        %ul.dropdown-menu.message.dropdown-1
+          %li
+            %a You have 4 new unread messages
+          %li
+            %a.clearfix{href: "#"}
+              %img{alt: "User Avatar", src: "img/user.jpg"}/
+              .detail
+                %strong John Doe
+                %p.no-margin
+                  Lorem ipsum dolor sit amet...
+                %small.text-muted
+                  %i.fa.fa-check.text-success
+                  27m ago
+          %li
+            %a.clearfix{href: "#"}
+              %img{alt: "User Avatar", src: "img/user2.jpg"}/
+              .detail
+                %strong Jane Doe
+                %p.no-margin
+                  Lorem ipsum dolor sit amet...
+                %small.text-muted
+                  %i.fa.fa-check.text-success
+                  5hr ago
+          %li
+            %a.clearfix{href: "#"}
+              %img{alt: "User Avatar", src: "img/user.jpg"}/
+              .detail
+                %strong Bill Doe
+                %p.no-margin
+                  Lorem ipsum dolor sit amet...
+                %small.text-muted
+                  %i.fa.fa-reply
+                  Yesterday
+          %li
+            %a.clearfix{href: "#"}
+              %img{alt: "User Avatar", src: "img/user2.jpg"}/
+              .detail
+                %strong Baby Doe
+                %p.no-margin
+                  Lorem ipsum dolor sit amet...
+                %small.text-muted
+                  %i.fa.fa-reply
+                  9 Feb 2013
+          %li
+            %a{href: "#"} View all messages
+      %li.dropdown.hidden-xs
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          %i.fa.fa-tasks.fa-lg
+          %span.notification-label.bounceIn.animation-delay5 4
+        %ul.dropdown-menu.task.dropdown-2
+          %li
+            %a{href: "#"} You have 4 tasks to complete
+          %li
+            %a{href: "#"}
+              .clearfix
+                %span.pull-left Bug Fixes
+                %small.pull-right.text-muted 78%
+              .progress
+                .progress-bar{style: "width:78%"}
+          %li
+            %a{href: "#"}
+              .clearfix
+                %span.pull-left Software Updating
+                %small.pull-right.text-muted 54%
+              .progress.progress-striped
+                .progress-bar.progress-bar-success{style: "width:54%"}
+          %li
+            %a{href: "#"}
+              .clearfix
+                %span.pull-left Database Migration
+                %small.pull-right.text-muted 23%
+              .progress
+                .progress-bar.progress-bar-warning{style: "width:23%"}
+          %li
+            %a{href: "#"}
+              .clearfix
+                %span.pull-left Unit Testing
+                %small.pull-right.text-muted 92%
+              .progress.progress-striped.active
+                .progress-bar.progress-bar-danger{style: "width:92%"}
+          %li
+            %a{href: "#"} View all tasks
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          %i.fa.fa-bell.fa-lg
+          %span.notification-label.bounceIn.animation-delay6 5
+        %ul.dropdown-menu.notification.dropdown-3
+          %li
+            %a{href: "#"} You have 5 new notifications
+          %li
+            %a{href: "#"}
+              %span.notification-icon.bg-warning
+                %i.fa.fa-warning
+              %span.m-left-xs Server #2 not responding.
+              %span.time.text-muted Just now
+          %li
+            %a{href: "#"}
+              %span.notification-icon.bg-success
+                %i.fa.fa-plus
+              %span.m-left-xs New user registration.
+              %span.time.text-muted 2m ago
+          %li
+            %a{href: "#"}
+              %span.notification-icon.bg-danger
+                %i.fa.fa-bolt
+              %span.m-left-xs Application error.
+              %span.time.text-muted 5m ago
+          %li
+            %a{href: "#"}
+              %span.notification-icon.bg-success
+                %i.fa.fa-usd
+              %span.m-left-xs 2 items sold.
+              %span.time.text-muted 1hr ago
+          %li
+            %a{href: "#"}
+              %span.notification-icon.bg-success
+                %i.fa.fa-plus
+              %span.m-left-xs New user registration.
+              %span.time.text-muted 1hr ago
+          %li
+            %a{href: "#"} View all notifications
+      %li.profile.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          %strong John Doe
+          %span
+            %i.fa.fa-chevron-down
+        %ul.dropdown-menu
+          %li
+            %a.clearfix{href: "#"}
+              =image_tag "user.jpg"
+              .detail
+                %strong John Doe
+                %p.grey John_Doe@email.com
+          %li
+            %a.main-link{href: "profile.html", tabindex: "-1"}
+              %i.fa.fa-edit.fa-lg
+              Edit profile
+          %li
+            %a.theme-setting{href: "#", tabindex: "-1"}
+              %i.fa.fa-cog.fa-lg
+              Setting
+          %li.divider
+          %li
+            = link_to 'Logout', destroy_user_session_path, :method=>'delete',:class=>"main-link.logoutConfirm_open"
+            -# %a.main-link.logoutConfirm_open{href: "#logoutConfirm", tabindex: "-1"}
+            -#   %i.fa.fa-lock.fa-lg
+            -#   Log out
+  - else
+    %ul.nav-notification.clearfix
+      %li.profile
+        =link_to new_user_session_path,'data-no-turbolink' => true do
+          %strong Login
+          %span
+            %i.fa.fa-chevron-down
