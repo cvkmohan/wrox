@@ -63,16 +63,60 @@
       function onPlayProgress() {
           
         froogaloop.addEvent('playProgress', function(data) {
-
-          if(data.seconds > 20.4 && data.seconds < 20.6){
+          //console.log(data.seconds);
+          if(data.seconds > 5.2 && data.seconds < 5.6){
             //apiLog('playProgress event : ' + data.seconds + ' : ' + data.percent + ' : ' + data.duration);
-            $('#myModal').modal();
+            $('#interOne').modal(
+              {backdrop: 'static', keyboard: false}
+            );
             froogaloop.api('pause');
-            $('#myModal').on('hidden.bs.modal', function (e) {
+            $('#interOne').on('hidden.bs.modal', function (e) {
               // do something...
               froogaloop.api('play');
+              $(".inter_one").attr("href", "#interOne");
+              $(".inter_one").attr("data-toggle", "modal");
+            });
+
+          }else if(data.seconds > 20.2 && data.seconds < 20.8){
+            $(".inter_two").attr("href", "#interTwo");
+            $(".inter_two").attr("data-toggle", "modal");
+          }else if(data.seconds > 40.2 && data.seconds < 40.8){
+            $('#interThree').modal(
+              {backdrop: 'static', keyboard: false}
+            );
+            froogaloop.api('pause');
+            $('#interThree').on('hidden.bs.modal', function (e) {
+              // do something...
+              froogaloop.api('play');
+              $(".inter_three").attr("href", "#interThree");
+              $(".inter_three").attr("data-toggle", "modal");
             })
-          }  
+          }else if(data.seconds > 50.2 && data.seconds < 50.8){
+            $(".inter_four").attr("href", "#interFour");
+            $(".inter_four").attr("data-toggle", "modal");
+          }else if(data.seconds > 61.2 && data.seconds < 61.8){
+            $('#interFive').modal(
+              {backdrop: 'static', keyboard: false}
+            );
+            froogaloop.api('pause');
+            $('#interFive').on('hidden.bs.modal', function (e) {
+              // do something...
+              froogaloop.api('play');
+              $(".inter_five").attr("href", "#interFive");
+              $(".inter_five").attr("data-toggle", "modal");
+            })
+          }else if(data.seconds > 75.1 && data.seconds < 75.6){
+            $('#interSix').modal(
+              {backdrop: 'static', keyboard: false}
+            );
+            froogaloop.api('pause');
+            $('#interSix').on('hidden.bs.modal', function (e) {
+              // do something...
+              froogaloop.api('play');
+              $(".inter_six").attr("href", "#interSix");
+              $(".inter_six").attr("data-toggle", "modal");
+            })
+          }                  
         });
          
       }

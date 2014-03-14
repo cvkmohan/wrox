@@ -8,16 +8,121 @@
         %iframe#player_1{frameborder: "0", height: "450", src: "http://player.vimeo.com/video/88744672?api=1&player_id=player_1&html5=1", width: "670"}
 
 
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+#interOne.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interOneLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title Modal title
+        %h4#interOneLabel.modal-title
+          Question: Which of the following is not possible when a user is logged in as a standard user? 
+      .modal-body
+        %label.label-radio
+          %input{name: "stack-radio", value: "1_1", id:"optionsRadios1", type: "radio"}/
+          %span.custom-radio
+          Option one is this and that be sure to include why it's great
+
+        %label.label-checkbox
+          %input{name: "stack-radio", value: "1_2", id:"optionsRadios1", type: "radio"}/
+          %span.custom-radio
+          Option two can be something else and selecting it will deselect option one
+
+        %label.label-radio
+          %input{name: "stack-radio", value: "1_3", id:"optionsRadios1", type: "radio"}/
+          %span.custom-radio
+          Option one is this and that be sure to include why it's great
+
+        %label.label-checkbox
+          %input{name: "stack-radio", value: "1_4", id:"optionsRadios1", type: "radio"}/
+          %span.custom-radio
+          Option two can be something else and selecting it will deselect option one
+
+        %br
+        #result
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button", onclick:"validate_one()"} Submit Answer
+
+#interTwo.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interTwoLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#interTwoLabel.modal-title Intervention two
       .modal-body
         \...
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
         %button.btn.btn-primary{type: "button"} Save changes
+
+#interThree.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interThreeLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#interThreeLabel.modal-title Intervention three
+      .modal-body
+        \...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+
+#interFour.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interFourLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#interFourLabel.modal-title Intervention Four
+      .modal-body
+        \...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+
+#interFive.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interFiveLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#interFiveLabel.modal-title Intervention Five
+      .modal-body
+        \...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+
+#interSix.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interSixLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#interSixLabel.modal-title Intervention Six
+      .modal-body
+        \...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes        
       
 = javascript_include_tag 'api/froogaloop.min'
+= javascript_include_tag 'player'
+
+:css
+  .modal-fade.modal-dialog {
+    width: 80%; /* or whatever you wish */
+  }
+
+:javascript
+  
+  function validate_one(){
+    answer = $('input[type="radio"]:checked').val();
+    if( typeof answer == "undefined" ){$("#optionsRadios1").focus(); return false;}
+    if(answer == "1_2"){
+      msg = "<strong>Well done!</strong> You successfully read this important alert message.";
+      html = '<div class="alert alert-success">'+msg+'</div>';
+    }else{
+      msg = "<strong>Well done!</strong> You successfully read this important alert message.";
+      html = '<div class="alert alert-danger">'+msg+'</div>';
+    } 
+
+    $("#result").html(html);
+  }
+  
