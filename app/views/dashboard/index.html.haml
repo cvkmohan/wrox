@@ -5,16 +5,39 @@
   .padding-md
     .row
       .col-sm-6
-        %iframe#player_1{frameborder: "0", height: "450", src: "http://player.vimeo.com/video/88744672?api=1&player_id=player_1&html5=1", width: "670"}
+        %iframe#player_1{frameborder: "0", height: "500", src: "http://player.vimeo.com/video/89080867?api=1&player_id=player_1&html5=1", width: "850"}
 
 
 #interOne.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interOneLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog
     .modal-content
       .modal-header
+        
+      .modal-body
+        %img{src: "/images/Graph2.svg"}
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+
+#interTwo.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interTwoLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interOneLabel.modal-title
-          Question: Which of the following is not possible when a user is logged in as a standard user? 
+        %h4#interTwoLabel.modal-title Bar chart vs Histogram
+      .modal-body
+        %blockquote
+          %p A common mistake among beginners is to confuse histograms and bar charts. Histograms have the response variable on the x axis, and the y axis shows the frequency of different values of the response. In contrast, a bar chart has the response variable on the y axis and a categorical explanatory variable on the x axis.
+
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+
+#interThree.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interThreeLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#interThreeLabel.modal-title Intervention three
       .modal-body
         %label.label-radio
           %input{name: "stack-radio", value: "1_1", id:"optionsRadios1", type: "radio"}/
@@ -35,36 +58,11 @@
           %input{name: "stack-radio", value: "1_4", id:"optionsRadios1", type: "radio"}/
           %span.custom-radio
           Option two can be something else and selecting it will deselect option one
-
         %br
-        #result
+        #result  
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button", onclick:"validate_one()"} Submit Answer
-
-#interTwo.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interTwoLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interTwoLabel.modal-title Intervention two
-      .modal-body
-        \...
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Save changes
-
-#interThree.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interThreeLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#interThreeLabel.modal-title Intervention three
-      .modal-body
-        \...
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary{type: "button"} Save changes
+        %button.btn.btn-primary{type: "button"} Submit Answer
 
 #interFour.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "interFourLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog
@@ -73,7 +71,7 @@
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
         %h4#interFourLabel.modal-title Intervention Four
       .modal-body
-        \...
+        %iframe{allowfullscreen: "allowfullscreen", frameborder: "0", height: "300", width: "100%"}
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
         %button.btn.btn-primary{type: "button"} Save changes
@@ -108,6 +106,9 @@
 :css
   .modal-fade.modal-dialog {
     width: 80%; /* or whatever you wish */
+  }
+  .player_active{
+    color: #626262;
   }
 
 :javascript

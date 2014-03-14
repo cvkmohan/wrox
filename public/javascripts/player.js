@@ -63,9 +63,10 @@
       function onPlayProgress() {
           
         froogaloop.addEvent('playProgress', function(data) {
-          //console.log(data.seconds);
-          if(data.seconds > 5.2 && data.seconds < 5.6){
+          console.log(data.seconds);
+          if(data.seconds > 52.3 && data.seconds < 52.7){
             //apiLog('playProgress event : ' + data.seconds + ' : ' + data.percent + ' : ' + data.duration);
+            $(".inter_one").addClass('player_active'); 
             $('#interOne').modal(
               {backdrop: 'static', keyboard: false}
             );
@@ -76,11 +77,20 @@
               $(".inter_one").attr("href", "#interOne");
               $(".inter_one").attr("data-toggle", "modal");
             });
-
-          }else if(data.seconds > 20.2 && data.seconds < 20.8){
-            $(".inter_two").attr("href", "#interTwo");
-            $(".inter_two").attr("data-toggle", "modal");
-          }else if(data.seconds > 40.2 && data.seconds < 40.8){
+          }else if(data.seconds > 87.6 && data.seconds < 88){
+            $(".inter_two").addClass('player_active'); 
+            $('#interTwo').modal(
+              {backdrop: 'static', keyboard: false}
+            );
+            froogaloop.api('pause');
+            $('#interTwo').on('hidden.bs.modal', function (e) {
+              // do something...
+              froogaloop.api('play');
+              $(".inter_two").attr("href", "#interTwo");
+              $(".inter_two").attr("data-toggle", "modal");
+            });
+          }else if(data.seconds > 138.2 && data.seconds < 138.5){
+            $(".inter_three").addClass('player_active'); 
             $('#interThree').modal(
               {backdrop: 'static', keyboard: false}
             );
@@ -90,33 +100,65 @@
               froogaloop.api('play');
               $(".inter_three").attr("href", "#interThree");
               $(".inter_three").attr("data-toggle", "modal");
-            })
-          }else if(data.seconds > 50.2 && data.seconds < 50.8){
-            $(".inter_four").attr("href", "#interFour");
-            $(".inter_four").attr("data-toggle", "modal");
-          }else if(data.seconds > 61.2 && data.seconds < 61.8){
-            $('#interFive').modal(
+            });
+          }else if(data.seconds > 167.5 && data.seconds < 168){
+
+            $('iframe').attr('src', "http://www.r-fiddle.org/#/embed?id=I5ErtPdo");
+
+            $(".inter_four").addClass('player_active'); 
+            $('#interFour').modal(
               {backdrop: 'static', keyboard: false}
             );
             froogaloop.api('pause');
-            $('#interFive').on('hidden.bs.modal', function (e) {
+            $('#interFour').on('hidden.bs.modal', function (e) {
               // do something...
               froogaloop.api('play');
-              $(".inter_five").attr("href", "#interFive");
-              $(".inter_five").attr("data-toggle", "modal");
-            })
-          }else if(data.seconds > 75.1 && data.seconds < 75.6){
-            $('#interSix').modal(
-              {backdrop: 'static', keyboard: false}
-            );
-            froogaloop.api('pause');
-            $('#interSix').on('hidden.bs.modal', function (e) {
-              // do something...
-              froogaloop.api('play');
-              $(".inter_six").attr("href", "#interSix");
-              $(".inter_six").attr("data-toggle", "modal");
-            })
-          }                  
+              $(".inter_four").attr("href", "#interFour");
+              $(".inter_four").attr("data-toggle", "modal");
+            });
+          }    
+
+
+          // }else if(data.seconds > 20.2 && data.seconds < 20.8){
+          //   $(".inter_two").attr("href", "#interTwo");
+          //   $(".inter_two").attr("data-toggle", "modal");
+          // }else if(data.seconds > 40.2 && data.seconds < 40.8){
+          //   $('#interThree').modal(
+          //     {backdrop: 'static', keyboard: false}
+          //   );
+          //   froogaloop.api('pause');
+          //   $('#interThree').on('hidden.bs.modal', function (e) {
+          //     // do something...
+          //     froogaloop.api('play');
+          //     $(".inter_three").attr("href", "#interThree");
+          //     $(".inter_three").attr("data-toggle", "modal");
+          //   })
+          // }else if(data.seconds > 50.2 && data.seconds < 50.8){
+          //   $(".inter_four").attr("href", "#interFour");
+          //   $(".inter_four").attr("data-toggle", "modal");
+          // }else if(data.seconds > 61.2 && data.seconds < 61.8){
+          //   $('#interFive').modal(
+          //     {backdrop: 'static', keyboard: false}
+          //   );
+          //   froogaloop.api('pause');
+          //   $('#interFive').on('hidden.bs.modal', function (e) {
+          //     // do something...
+          //     froogaloop.api('play');
+          //     $(".inter_five").attr("href", "#interFive");
+          //     $(".inter_five").attr("data-toggle", "modal");
+          //   })
+          // }else if(data.seconds > 75.1 && data.seconds < 75.6){
+          //   $('#interSix').modal(
+          //     {backdrop: 'static', keyboard: false}
+          //   );
+          //   froogaloop.api('pause');
+          //   $('#interSix').on('hidden.bs.modal', function (e) {
+          //     // do something...
+          //     froogaloop.api('play');
+          //     $(".inter_six").attr("href", "#interSix");
+          //     $(".inter_six").attr("data-toggle", "modal");
+          //   })
+          // }                  
         });
          
       }
